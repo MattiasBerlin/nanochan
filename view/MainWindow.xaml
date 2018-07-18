@@ -1,0 +1,39 @@
+﻿<Window x:Class="NanoChan.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" 
+        xmlns:local="clr-namespace:NanoChan"
+        WindowStyle="None"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" MinHeight="70" MinWidth="70" >
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="18" />
+    </WindowChrome.WindowChrome>
+
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="0.5" >
+            <Grid>
+                <!-- Top bar -->
+                <Button Name="Settings" Click="Settings_Click" WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Top" HorizontalAlignment="Left" Height="15" Width="15" Margin="2" Content="⚙" FontSize="10" BorderThickness="0" Background="#EAEAEA" Panel.ZIndex="1"/>
+                <Grid Name="TopBar" VerticalAlignment="Top" Background="#EAEAEA" >
+                    <StackPanel Height="20" WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+                        <Button Name="Minimize" Click="Minimize_Click" Height="15" Width="15" Margin="2" Content="_" FontSize="10" BorderThickness="0" Background="#EAEAEA" />
+                        <Button Name="CloseButton" Click="Close_Click" Height="15" Width="15" Margin="2" Content="✖" FontSize="10" BorderThickness="0" Background="#EAEAEA" />
+                    </StackPanel>
+                </Grid>
+                <WindowsFormsHost Name="windowsFormsHost" Margin="4,20,4,4">
+                    <WindowsFormsHost.Child>
+                        <wf:WebBrowser x:Name="browser" IsWebBrowserContextMenuEnabled="False" WebBrowserShortcutsEnabled="False" >
+                            <wf:WebBrowser.ContextMenuStrip>
+                                <wf:ContextMenuStrip x:Name="contextMenu" ShowImageMargin="False" />
+                            </wf:WebBrowser.ContextMenuStrip>
+                        </wf:WebBrowser>
+                    </WindowsFormsHost.Child>
+                </WindowsFormsHost>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    margin: 6px;
+    font: 25px 'Meiryo';
+    /* MS Mincho, MS Gothic */
+}
+
+ruby rt {
+    position: relative;
+    top: -2px;
+}
+
+.word:nth-of-type(odd) {
+    color: blue;
+}
+
+.word:nth-of-type(even) {
+    color: green;
+}
+
+.name {
+    color: #CC0000;
+}
